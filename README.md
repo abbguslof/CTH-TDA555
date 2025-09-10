@@ -80,11 +80,3 @@ For more details, see the lab README files.
 ## License
 
 BSD (see individual files)
-
----
-
-## Contact | Kontakt
-
-For questions, feedback, or to join the group, open an issue or contact the repo owner.
-
-Vid frågor, feedback eller om du vill gå med i gruppen, öppna ett issue eller kontakta repoägaren.
