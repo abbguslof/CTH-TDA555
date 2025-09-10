@@ -17,11 +17,13 @@ module Blackjack where
 import Cards
 import RunGame
 import Test.QuickCheck hiding (shuffle)
+import Data.Int (Int)
+import GHC.Arr (adjust)
 
 -- Task A1 --
 
 hand2 :: Hand
-hand2 = [Card (Numeric 2) Hearts, Card Jack Spades]
+hand2 = [Card (Numeric 2) Hearts, Card Jack Spades, Card Ace Hearts]
 
 sizeSteps :: [Int]
 sizeSteps = undefined
@@ -44,8 +46,13 @@ valueCard a = valueRank (rank a)
 numberOfAces :: Hand -> Int
 numberOfAces hand = length (filter (\card -> rank card == Ace) hand)
 
+adjustForAces :: Int -> Int -> Int
+adjustForAces handTotal numberOfAces
+ | handTotal > 21 && numberOfAces > 0 = adjustForAces (handTotal - 10) (numberOfAces - 1)
+ | otherwise = handTotal
+
 value :: Hand -> Int
-value hand = sum (map valueCard hand)
+value hand = adjustForAces (sum (map valueCard hand)) (numberOfAces hand)
 
 -- Task A4 --
 gameOver :: Hand -> Bool
