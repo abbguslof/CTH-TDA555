@@ -28,5 +28,7 @@ You need **GHC (Glasgow Haskell Compiler)** and **Cabal** or **Stack**.
 ```bash
 ghci MyFile.hs
 
+
+> **Tip:** For a detailed guide on downloading Haskell, refer to the link provided below.
 Guide to download haskell (work in progress):
 https://notes.guslof.se/share/C5eahfoZ15PL
