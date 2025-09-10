@@ -1,0 +1,18 @@
+
+power1
+  calculates power correctly [✔]
+    +++ OK, passed 100 tests.
+power2
+  calculates power correctly [✔]
+    +++ OK, passed 100 tests.
+comparePower1
+  compares powers correctly [✔]
+    +++ OK, passed 100 tests.
+comparePower2
+  compares powers correctly [✔]
+    +++ OK, passed 100 tests.
+testAll
+  runs all tests successfully [✔]
+
+Finished in 0.0015 seconds
+5 examples, 0 failures
