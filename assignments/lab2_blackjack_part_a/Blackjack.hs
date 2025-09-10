@@ -19,19 +19,24 @@ import RunGame
 import Test.QuickCheck hiding (shuffle)
 import Data.Int (Int)
 import GHC.Arr (adjust)
+import Data.String (String)
+import GHC.Base (undefined)
+import Cards (Card, Suit (Diamonds))
 
 -- Task A1 --
 
 hand2 :: Hand
-hand2 = [Card (Numeric 2) Hearts, Card Jack Spades, Card Ace Hearts]
+hand2 = [Card (Numeric 2) Hearts, Card Jack Spades, Card Ace Diamonds]
 
 sizeSteps :: [Int]
 sizeSteps = undefined
 
 -- Task A2 --
+displayCard :: Card -> String
+displayCard a = show (rank a) ++ " of " ++ show (suit a)
 
 display :: Hand -> String
-display = undefined
+display hand = unlines (map displayCard hand)
 
 -- Task A3 --
 valueRank :: Rank -> Int
