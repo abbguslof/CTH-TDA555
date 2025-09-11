@@ -26,10 +26,23 @@ import Cards (Card, Suit (Diamonds))
 -- Task A1 --
 
 hand2 :: Hand
-hand2 = [Card (Numeric 2) Hearts, Card Jack Spades, Card Ace Diamonds]
+hand2 = [Card (Numeric 2) Hearts, Card Jack Spades]
+-- = 0 (Card (Numeric 2) Hearts : (Card Jack Spades : []))
+-- = 1 (Card Jack Spades : [])
+-- = 2 ([])
+-- = 2 
+
+-- de som händer nedan varför skrivs det sådär?
 
 sizeSteps :: [Int]
-sizeSteps = undefined
+sizeSteps =
+  [ size []                                      
+  , size [Card (Numeric 2) Hearts, Card Jack Spades]  
+  , 1 + size [Card Jack Spades]                 
+  , 1 + 1 + size []                             
+  , 1 + 1 + 0                                   
+  , 2                                           
+  ]
 
 -- Task A2 --
 displayCard :: Card -> String
