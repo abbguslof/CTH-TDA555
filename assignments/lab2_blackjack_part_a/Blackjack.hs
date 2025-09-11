@@ -45,8 +45,21 @@ sizeSteps =
   ]
 
 -- Task A2 --
+showRank :: Rank -> String
+showRank (Numeric n) = show n 
+showRank Jack = "Jack"
+showRank King = "King"
+showRank Ace = "Ace"
+showRank Queen = "Queen"
+
+showSuit :: Suit -> String
+showSuit Hearts = "Hearts\9829"
+showSuit Spades = "Spades\9824"
+showSuit Diamonds = "Diamonds\9830"
+showSuit Clubs = "Clubs\9827"
+
 displayCard :: Card -> String
-displayCard a = show (rank a) ++ " of " ++ show (suit a)
+displayCard (Card r s) = showRank r ++ " of " ++ showSuit s
 
 display :: Hand -> String
 display hand = unlines (map displayCard hand)
