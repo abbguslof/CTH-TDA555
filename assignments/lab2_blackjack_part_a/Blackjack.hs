@@ -21,7 +21,8 @@ import Data.Int (Int)
 import GHC.Arr (adjust)
 import Data.String (String)
 import GHC.Base (undefined)
-import Cards (Card, Suit (Diamonds))
+import Cards (Card, Suit (Diamonds, Hearts))
+import Test.QuickCheck.Text (number)
 
 -- Task A1 --
 hand2 :: Hand
@@ -74,13 +75,19 @@ valueCard a = valueRank (rank a)
 numberOfAces :: Hand -> Int
 numberOfAces hand = length (filter (\card -> rank card == Ace) hand)
 
-adjustForAces :: Int -> Int -> Int
-adjustForAces handTotal numberOfAces
- | handTotal > 21 && numberOfAces > 0 = adjustForAces (handTotal - 10) (numberOfAces - 1)
- | otherwise = handTotal
+-- adjustForAces :: Int -> Int -> Int
+-- adjustForAces handTotal numberOfAces
+-- | handTotal > 21 && numberOfAces > 0 = adjustForAces (handTotal - 10) (numberOfAces - 1)
+-- | otherwise = handTotal
+-- value :: Hand -> Int
+-- value hand = adjustForAces (sum (map valueCard hand)) (numberOfAces hand)
 
 value :: Hand -> Int
-value hand = adjustForAces (sum (map valueCard hand)) (numberOfAces hand)
+value hand =
+  let total = sum (map valueCard hand)
+  in if total > 21
+     then total - (numberOfAces hand * 10)
+     else total
 
 -- Task A4 --
 gameOver :: Hand -> Bool
@@ -88,8 +95,9 @@ gameOver a = value a > 21
 
 -- If value > 21
 winner :: Hand -> Hand -> Player
-winner a = undefined
-
+winner g b
+ | value g <= 21 && value b < value g = Guest
+ | otherwise = Bank
 --------------------------------------------------------------------------------
 -- Part B
 ---------------------------------------------------------------------------------
