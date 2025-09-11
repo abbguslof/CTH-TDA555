@@ -75,6 +75,7 @@ valueCard a = valueRank (rank a)
 numberOfAces :: Hand -> Int
 numberOfAces hand = length (filter (\card -> rank card == Ace) hand)
 
+-- Allows for aces to have both 11 and 1 as value
 -- adjustForAces :: Int -> Int -> Int
 -- adjustForAces handTotal numberOfAces
 -- | handTotal > 21 && numberOfAces > 0 = adjustForAces (handTotal - 10) (numberOfAces - 1)
