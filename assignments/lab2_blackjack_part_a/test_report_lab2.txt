@@ -1,0 +1,227 @@
+
+Task A1: sizeSteps
+  Should have 7 rewrite steps, i.e., the list should have 7 elements. [✔]
+  Every element should evaluate to 2. [✔]
+Task A2: display
+  Should not show constructor names [✔]
+    +++ OK, passed 100 tests.
+Task A3: value
+  Aces have the same value: [✔]
+  An ace and king should be 21: [✔]
+  A single ace is 11: [✔]
+  Ace of Clubs♣
+Queen of Clubs♣
+Ace of Hearts♥
+3 of Hearts♥
+4 of Hearts♥
+ should be 19: [✔]
+Task A4: gameOver and winner
+  A value over 21 should be bust, otherwise not: [✔]
+    +++ OK, passed 100 tests.
+  Test winner [✔]
+    +++ OK, passed 100 tests.
+
+Finished in 0.0088 seconds
+9 examples, 0 failures
+
+Task B1: fullDeck
+  should have 52 cards: [✘]
+  should have 13 hearts: [✘]
+  should have 13 clubs: [✘]
+  should have 13 diamonds: [✘]
+  should have 13 spades: [✘]
+  should have 4 cards of each rank: [✘]
+Task B2: draw
+  should throw an error on an empty deck: [✔]
+  should move a card from the deck to the hand: [✘]
+Task B3: playBank
+  should always draw a card if the value is below 16 [✘]
+  should not draw a card if the value is over 16 [✘]
+Task B4: pick and shuffle
+  pick 0.0 should select the first card of a non-empty deck [✘]
+  pick 1.0 should select the last card of a non-empty deck [✘]
+  the picked card should be in the deck [✘]
+  shuffle should not add or remove cards [✘]
+  shuffle should change the order [✘]
+Task B5: properties
+  validate prop_shuffle [✘]
+  validate prop_size_shuffle [✘]
+
+Failures:
+
+  ./Blackjack.hs:107:12: 
+  1) Task B1: fullDeck should have 52 cards:
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at ./Blackjack.hs:107:12 in main:Blackjack
+
+  To rerun use: --match "/Task B1: fullDeck/should have 52 cards:/" --seed 425199747
+
+  ./Blackjack.hs:107:12: 
+  2) Task B1: fullDeck should have 13 hearts:
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at ./Blackjack.hs:107:12 in main:Blackjack
+
+  To rerun use: --match "/Task B1: fullDeck/should have 13 hearts:/" --seed 425199747
+
+  ./Blackjack.hs:107:12: 
+  3) Task B1: fullDeck should have 13 clubs:
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at ./Blackjack.hs:107:12 in main:Blackjack
+
+  To rerun use: --match "/Task B1: fullDeck/should have 13 clubs:/" --seed 425199747
+
+  ./Blackjack.hs:107:12: 
+  4) Task B1: fullDeck should have 13 diamonds:
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at ./Blackjack.hs:107:12 in main:Blackjack
+
+  To rerun use: --match "/Task B1: fullDeck/should have 13 diamonds:/" --seed 425199747
+
+  ./Blackjack.hs:107:12: 
+  5) Task B1: fullDeck should have 13 spades:
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at ./Blackjack.hs:107:12 in main:Blackjack
+
+  To rerun use: --match "/Task B1: fullDeck/should have 13 spades:/" --seed 425199747
+
+  ./Blackjack.hs:107:12: 
+  6) Task B1: fullDeck should have 4 cards of each rank:
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at ./Blackjack.hs:107:12 in main:Blackjack
+
+  To rerun use: --match "/Task B1: fullDeck/should have 4 cards of each rank:/" --seed 425199747
+
+  CheckPartB.hs:42:5: 
+  7) Task B2: draw should move a card from the deck to the hand:
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at ./Blackjack.hs:115:8 in main:Blackjack
+       (after 1 test)
+         NonEmpty {getNonEmpty = [Card Queen Diamonds]}
+         []
+
+  To rerun use: --match "/Task B2: draw/should move a card from the deck to the hand:/" --seed 425199747
+
+  CheckPartB.hs:47:5: 
+  8) Task B3: playBank should always draw a card if the value is below 16
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at ./Blackjack.hs:120:12 in main:Blackjack
+       (after 1 test)
+         Exception thrown while showing test case:
+           Prelude.undefined
+           CallStack (from HasCallStack):
+             undefined, called at ./Blackjack.hs:107:12 in main:Blackjack
+         
+
+  To rerun use: --match "/Task B3: playBank/should always draw a card if the value is below 16/" --seed 425199747
+
+  ./Blackjack.hs:120:12: 
+  9) Task B3: playBank should not draw a card if the value is over 16
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at ./Blackjack.hs:120:12 in main:Blackjack
+
+  To rerun use: --match "/Task B3: playBank/should not draw a card if the value is over 16/" --seed 425199747
+
+  CheckPartB.hs:56:5: 
+  10) Task B4: pick and shuffle pick 0.0 should select the first card of a non-empty deck
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at ./Blackjack.hs:125:8 in main:Blackjack
+       (after 1 test)
+         NonEmpty {getNonEmpty = [Card (Numeric 7) Hearts]}
+
+  To rerun use: --match "/Task B4: pick and shuffle/pick 0.0 should select the first card of a non-empty deck/" --seed 425199747
+
+  CheckPartB.hs:58:5: 
+  11) Task B4: pick and shuffle pick 1.0 should select the last card of a non-empty deck
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at ./Blackjack.hs:125:8 in main:Blackjack
+       (after 1 test)
+         NonEmpty {getNonEmpty = [Card (Numeric 7) Hearts]}
+
+  To rerun use: --match "/Task B4: pick and shuffle/pick 1.0 should select the last card of a non-empty deck/" --seed 425199747
+
+  CheckPartB.hs:60:5: 
+  12) Task B4: pick and shuffle the picked card should be in the deck
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at ./Blackjack.hs:125:8 in main:Blackjack
+       (after 1 test)
+         NonEmpty {getNonEmpty = [Card Queen Diamonds]}
+         0.2367402103917241
+
+  To rerun use: --match "/Task B4: pick and shuffle/the picked card should be in the deck/" --seed 425199747
+
+  CheckPartB.hs:63:5: 
+  13) Task B4: pick and shuffle shuffle should not add or remove cards
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at ./Blackjack.hs:128:11 in main:Blackjack
+       (after 1 test and 2 shrinks)
+         NonEmpty {getNonEmpty = [Card Queen Diamonds]}
+         [] ++ ...
+
+  To rerun use: --match "/Task B4: pick and shuffle/shuffle should not add or remove cards/" --seed 425199747
+
+  CheckPartB.hs:65:5: 
+  14) Task B4: pick and shuffle shuffle should change the order
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at ./Blackjack.hs:128:11 in main:Blackjack
+       (after 1 test and 2 shrinks)
+         [] ++ ...
+
+  To rerun use: --match "/Task B4: pick and shuffle/shuffle should change the order/" --seed 425199747
+
+  CheckPartB.hs:69:5: 
+  15) Task B5: properties validate prop_shuffle
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at ./Blackjack.hs:128:11 in main:Blackjack
+       (after 1 test and 2 shrinks)
+         Card (Numeric 7) Spades
+         []
+         [] ++ ...
+
+  To rerun use: --match "/Task B5: properties/validate prop_shuffle/" --seed 425199747
+
+  CheckPartB.hs:70:5: 
+  16) Task B5: properties validate prop_size_shuffle
+       uncaught exception: ErrorCall
+       Prelude.undefined
+       CallStack (from HasCallStack):
+         undefined, called at ./Blackjack.hs:146:44 in main:Blackjack
+       (after 1 test and 2 shrinks)
+         [] ++ ...
+         []
+
+  To rerun use: --match "/Task B5: properties/validate prop_size_shuffle/" --seed 425199747
+
+Randomized with seed 425199747
+
+Finished in 0.0041 seconds
+17 examples, 16 failures

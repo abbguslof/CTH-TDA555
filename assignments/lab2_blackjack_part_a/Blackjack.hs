@@ -34,13 +34,15 @@ hand2 = [Card (Numeric 2) Hearts, Card Jack Spades]
 
 sizeSteps :: [Int]
 sizeSteps =
-  [ size []                                      
-  , size [Card (Numeric 2) Hearts, Card Jack Spades]  
-  , 1 + size [Card Jack Spades]                 
-  , 1 + 1 + size []                             
-  , 1 + 1 + 0                                   
-  , 2                                           
+  [ size hand2
+  , size [Card (Numeric 2) Hearts, Card Jack Spades]
+  , 1 + size [Card Jack Spades]
+  , 1 + 1 + size []
+  , 1 + 1 + 0
+  , 1 + 1
+  , 2
   ]
+
 
 -- Task A2 --
 showRank :: Rank -> String
@@ -50,6 +52,7 @@ showRank King = "King"
 showRank Ace = "Ace"
 showRank Queen = "Queen"
 
+-- Displays suit with both text and unicode characters (req. putStr or eqv.)
 showSuit :: Suit -> String
 showSuit Hearts = "Hearts\9829"
 showSuit Spades = "Spades\9824"
@@ -59,8 +62,10 @@ showSuit Clubs = "Clubs\9827"
 displayCard :: Card -> String
 displayCard (Card r s) = showRank r ++ " of " ++ showSuit s
 
-display :: Hand -> IO ()
-display hand = putStr (unlines (map displayCard hand))
+-- Displays a hand of cards as a nicely formatted string, with each card on a separate line.
+display :: Hand -> String
+display hand = unlines (map displayCard hand)
+
 
 -- Task A3 --
 valueRank :: Rank -> Int
@@ -75,20 +80,13 @@ valueCard a = valueRank (rank a)
 numberOfAces :: Hand -> Int
 numberOfAces hand = length (filter (\card -> rank card == Ace) hand)
 
--- Allows for aces to have both 11 and 1 as value
--- adjustForAces :: Int -> Int -> Int
--- adjustForAces handTotal numberOfAces
--- | handTotal > 21 && numberOfAces > 0 = adjustForAces (handTotal - 10) (numberOfAces - 1)
--- | otherwise = handTotal
--- value :: Hand -> Int
--- value hand = adjustForAces (sum (map valueCard hand)) (numberOfAces hand)
-
 value :: Hand -> Int
 value hand =
   let total = sum (map valueCard hand)
   in if total > 21
      then total - (numberOfAces hand * 10)
      else total
+
 
 -- Task A4 --
 gameOver :: Hand -> Bool
@@ -99,7 +97,7 @@ winner :: Hand -> Hand -> Player
 winner g b
  | value g <= 21 && value b < value g = Guest
  | otherwise = Bank
- 
+
 --------------------------------------------------------------------------------
 -- Part B
 ---------------------------------------------------------------------------------
