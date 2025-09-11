@@ -6,8 +6,8 @@ License     : BSD
 Maintainer  : alexg@chalmers.se
 Stability   : experimental
 
-Authors     : <list your names here>
-Lab group   : <group number>
+Authors     : Bakr Al-Rubaye, Gustav Löfqvist, William Brantebäck
+Lab group   : 23
 -}
 {-# OPTIONS_GHC -Wno-overlapping-patterns #-}
 
@@ -24,15 +24,12 @@ import GHC.Base (undefined)
 import Cards (Card, Suit (Diamonds))
 
 -- Task A1 --
-
 hand2 :: Hand
 hand2 = [Card (Numeric 2) Hearts, Card Jack Spades]
 -- = 0 (Card (Numeric 2) Hearts : (Card Jack Spades : []))
 -- = 1 (Card Jack Spades : [])
 -- = 2 ([])
 -- = 2 
-
--- de som händer nedan varför skrivs det sådär?
 
 sizeSteps :: [Int]
 sizeSteps =
