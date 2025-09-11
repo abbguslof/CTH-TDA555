@@ -58,8 +58,8 @@ showSuit Clubs = "Clubs\9827"
 displayCard :: Card -> String
 displayCard (Card r s) = showRank r ++ " of " ++ showSuit s
 
-display :: Hand -> String
-display hand = unlines (map displayCard hand)
+display :: Hand -> IO ()
+display hand = putStr (unlines (map displayCard hand))
 
 -- Task A3 --
 valueRank :: Rank -> Int
